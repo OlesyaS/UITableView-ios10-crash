@@ -51,8 +51,14 @@
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    return 1; // will be a crash on ios10.
-    return 1.01;
+//    return 1; // will be a crash up to ios10.
+//    return 0.5; // will be a crash up to ios10.
+    
+    CGFloat height = 1;
+    if (([UIDevice.currentDevice.systemVersion compare:@"11.0" options:NSNumericSearch] == NSOrderedAscending) && (ceil(height) == 1)) {
+        height = 1.01;
+    }
+    return height;
 }
 
 @end
