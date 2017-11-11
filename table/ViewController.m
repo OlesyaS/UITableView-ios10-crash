@@ -51,6 +51,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    return 1; // will be a crash on ios10.
     return 1.01;
 }
 
